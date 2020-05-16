@@ -1,0 +1,50 @@
+title: Vu Dao - Backend Developer
+author: Vu Dao
+email: vudn.97@gmail.com
+description: > # this means to ignore newlines until "show_exerpts:"
+  A simple personal blog about technical, life.
+  Nodejs, JavaScript
+show_excerpts: true # set to true to show excerpts on the homepage
+
+# Minima date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+sass:
+  sass_dir: _sass
+plainwhite:
+  name: Vu Dao
+  tagline: NodeJS Developer
+  date_format: '%b %-d, %Y'
+  sitemap: true # set to true to generate sitemap.xml content
+  dark_mode: true # set true to add dark mode toggle
+  disqus_shortname: nguyenvudao
+
+  # generate social links in footer
+  social_links:
+    # twitter: thelehhman
+    facebook: ngvu.it
+    linkedIn: in/nguyenvudao
+    github: nguyenvudao
+    # rss: rss
+    # dribbble: jekyll
+    # flickr:   jekyll
+    # instagram: jekyll
+    # pinterest: jekyll
+    # youtube: jekyll
+    # Mastodon instances
+    # mastodon:
+    # - username: jekyll
+    #   instance: example.com
+    # - username: jekyll2
+    #   instance: example.com
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+#header_pages:
+# - about.md
+
+# Build settings
+theme: plainwhite
+
+plugins:
+  - jekyll-seo-tag
+#  - jekyll-feed

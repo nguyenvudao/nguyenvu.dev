@@ -105,11 +105,11 @@ string - number = number;
 Như vậy thì đây cũng là 1 mẹo nhỏ để các bạn có thể ép kiểu của biến trong quá trình làm việc mà không cần phải dùng tới các hàm có sẵn của Javascript. Ví dụ như:
 
 ```javascript
-let number = '10';
-number = number - 0;
+let aString = '10';
+aString = aString - 0;
 
-console.log(number); // 10
-console.log(typeof number); // number
+console.log(aString); // 10
+console.log(typeof aString); // number
 ```
 
 Nhìn lại thì javascript cũng không có gì gọi là phức tạp quá đúng không nhỉ? Chỉ giống như cô gái hơi đỏng đảnh chút xíu thôi, việc của mình là nắm bắt được tâm lý của cô gái ấy thì mọi thứ ắt sẽ thành công. Cứ cố gắng đi, biết đâu được đúng hông nào, không thành công cũng thành thụ :D

@@ -5,8 +5,7 @@ date: 2020-05-23
 categories: Nodejs JavaScript
 ---
 
-Haiiia chào cả nhà iu của kem. Tình hình là mình mới làm appraisal (review lại quá trình làm việc trong năm qua) xong, nhìn chung cũng khá khả quan nên tuần này mình sẽ public post đầu tiên về technical nhé.
-
+Haiiia chào cả nhà iu của kem. Tuần này mình sẽ bắt đầu public posts về technical nhé.
 AND HERE WE GOOOOO.
 
 ## Ủa, cộng trừ trong javascipt cũng là toán tử bình thường thôi mà?

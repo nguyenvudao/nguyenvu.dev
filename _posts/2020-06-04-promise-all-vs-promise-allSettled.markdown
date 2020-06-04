@@ -5,11 +5,11 @@ date: 2020-06-04
 categories: Nodejs JavaScript
 ---
 
-Hế lô mọi người, chào mừng mọi người quay trở lại với blog cá nhân của mình. Tình hình là mình mới chuyển nhà sang bên Nơ Trang Long, Bình Thạnh (cách công ty tầm 2km mà sáng mở mắt ra là kẹt xe, tối từ công ty về cũng kẹt xe =.= mệt vcđ) nên thời gian có nhiều hơn đôi chút nên tính published nhiều bài viết hơn, và đây sẽ là một trong những số đó :D
+Hế lô mọi người, chào mừng mọi người quay trở lại với blog cá nhân của mình. Tình hình là mình mới chuyển nhà sang bên Nơ Trang Long, Bình Thạnh (cách công ty tầm 2km mà sáng mở mắt ra là kẹt xe, tối từ công ty về cũng kẹt xe =.= mệt vcđ) nên thời gian có nhiều hơn đôi chút nên tính publish nhiều bài viết hơn, và đây sẽ là một trong những số đó :D
 
-## Promise All: Phương thức tuyệt vời để xử lý performance khi làm việc với các task asynchronous.
+## Promise All: I can help you to handle the asynchronous tasks better.
 
-Trong công việc, mọi người chắc hẳn sẽ gặp rất nhiều trường hợp cần thực hiện CURD (Create, Update, Read, Delete) các instance trong database. Và Javascript là ngôn ngữ single thread cũng như cơ chế Blocking / Non-Blocking I/O của NodeJS mà mỗi lần thực hiện request ta sẽ phải chờ kết quả trả về. Điều này khiến cho việc performance của App trở nên cực kì tệ hại. Ví dụ như:
+Trong công việc, mọi người chắc hẳn sẽ gặp rất nhiều trường hợp cần thực hiện CURD (Create, Update, Read, Delete) các instance trong database. Và Javascript là ngôn ngữ single thread cũng như cơ chế Blocking / Non-Blocking I/O của NodeJS mà mỗi lần thực hiện request ta sẽ (phải) chờ kết quả trả về. Điều này khiến cho việc performance của App trở nên cực kì tệ hại. Ví dụ như:
 
 ```javascript
 const updatePerson = async () => {

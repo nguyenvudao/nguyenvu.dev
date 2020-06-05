@@ -5,11 +5,11 @@ date: 2020-06-04
 categories: Nodejs JavaScript
 ---
 
-Hế lô mọi người, chào mừng mọi người quay trở lại với blog cá nhân của mình. Tình hình là mình mới chuyển nhà sang bên Nơ Trang Long, Bình Thạnh (cách công ty tầm 2km mà sáng mở mắt ra là kẹt xe, tối từ công ty về cũng kẹt xe =.= mệt vcđ) nên thời gian có nhiều hơn đôi chút nên tính publish nhiều bài viết hơn, và đây sẽ là một trong những số đó :D
+Hế lô mọi người, chào mừng mọi người quay trở lại với blog cá nhân của mình. Tình hình là mình mới chuyển nhà sang bên Nơ Trang Long, Bình Thạnh (cách công ty tầm 2km mà sáng mở mắt ra là kẹt xe, tối từ công ty về cũng kẹt xe =.= mệt vcđ) nên thời gian có nhiều hơn đôi chút nên tính publish nhiều bài viết hơn nhưng mà dạo này toàn đánh liên minh với tụi cùng phòng thôi =)))) nên đây sẽ là bài đầu tiên trong số đó :D
 
 ## Promise All: I can help you to handle the asynchronous tasks better.
 
-Trong công việc, mọi người chắc hẳn sẽ gặp rất nhiều trường hợp cần thực hiện CURD (Create, Update, Read, Delete) các instance trong database. Và Javascript là ngôn ngữ single thread cũng như cơ chế Blocking / Non-Blocking I/O của NodeJS mà mỗi lần thực hiện request ta sẽ (phải) chờ kết quả trả về. Điều này khiến cho việc performance của App trở nên cực kì tệ hại. Ví dụ như:
+Trong công việc, mọi người chắc hẳn sẽ gặp rất nhiều trường hợp cần thực hiện CURD (Create, Update, Read, Delete) các instance trong database. Và Javascript là ngôn ngữ single thread cũng như cơ chế Blocking / Non-Blocking I/O của NodeJS mà mỗi lần thực hiện request ta sẽ (phải) chờ kết quả trả về. Điều này khiến cho performance của App trở nên cực kì tệ hại. Ví dụ như:
 
 ```javascript
 const updatePerson = async () => {
@@ -20,7 +20,7 @@ const updatePerson = async () => {
 await updatePerson(); // time cost: 10s.
 ```
 
-Ok, nhìn vào ví dụ trên ta có thể thấy việc tìm 2 instance trong database này không hề phụ thuộc vào nhau (tức là muốn tìm sách thì không cần quan tâm việc user `VuDao` có tồn tại trong bảng **User** hay không) nhưng mỗi lần gọi tới cái hàm này ta phải chờ ~10s để nó kết thúc, điều này khiến cho việc performance của App giảm rất nhiều. Nodejs vốn nổi tiếng với việc performance khá tốt, có thể chịu vài chục nghìn request đồng thời trong 1 giây. Ấy vậy mà gọi 1 cái request đợi hết 10s thì bỏ mama mất rồi.
+Ok, nhìn vào ví dụ trên ta có thể thấy việc tìm 2 instance trong database này không hề phụ thuộc vào nhau (tức là muốn tìm sách thì không cần quan tâm việc user `VuDao` có tồn tại trong bảng **User** hay không) nhưng mỗi lần gọi tới cái hàm này ta phải chờ ~10s để nó kết thúc, điều này khiến cho performance của App giảm rất nhiều. Nodejs vốn nổi tiếng với performance khá tốt, có thể chịu vài chục nghìn request đồng thời trong 1 giây. Ấy vậy mà gọi 1 cái request đợi hết 10s thì bỏ mama mất rồi.
 
 Và để giải quyết vấn đề trên, **Promise.all** được ra đời, hứa hẹn cho một tương lai mới cho những tasks CURD như thế này. Thay vì phải đợi từng request như ở trên, ta có thể viết lại như sau:
 
@@ -52,7 +52,7 @@ Không nói nhiều, `Promise.allSettled` sinh ra để khắc phục những nh
 Nhìn vào ví dụ dưới đây mình sẽ có cái nhìn tổng quan hơn:
 
 ```javascript
-await Promise.allSettled([
+Promise.allSettled([
   Promise.reject('This failed.'),
   Promise.reject('This failed too.'),
   Promise.resolve('Ok I did it.'),

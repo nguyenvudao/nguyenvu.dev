@@ -130,4 +130,5 @@ Chào mọi người, hẹn gặp lại ở bài viết tiếp theo :D
 [reactjs-link]: https://reactjs.org/
 [hmac-link]: https://en.wikipedia.org/wiki/HMAC
 [otplink]: https://www.npmjs.com/package/otplib
-[here-link]: https://nguyenvu.dev
+[here-link]: https://twofactor.nguyenvu.dev
+[fb-link]: https://www.facebook.com/ngvu.it/

@@ -9,7 +9,7 @@ Chào mọi người, tuần trước Client có gửi cho mình một cái requ
 
 À lưu ý là backend sẽ dùng [Nodejs][nodejs-link] còn frontend sẽ là [Reactjs][reactjs-link] nhé. Thực ra khi đã hiểu được flow của nó thì platform hay ngôn ngữ nào cũng không phải là vấn đề nữa :D
 
-### What is it?
+### 0. Two-Factor Authentication: What is it?
 
 Theo [Authy][authy-link] thì Two-Factor Authentication là một lớp bảo mật bổ sung để xác thực rằng người dùng đang login vào tài khoản mà họ có quyền truy cập. Sau khi đăng nhập bằng email / password, user sẽ phải cung cấp thêm một (số) thông tin bảo mật để xác thực. Thông tin này có thể là:
 
@@ -23,7 +23,7 @@ Okay, có rất nhiều cách để có thể xác thực hai bước, nhưng tr
 
 À mà cái hay của nó là user có thể thực hiện được việc authentication mà không cần điện thoại phải kết nối tới mạng, hồi trước mình nghĩ là Google generate ra sẵn một đống mã cơ chứ, nhưng sự thật thì không phải là như thế , cùng xem nào :)).
 
-### How does it work?
+### I. How does it work?
 
 Mấy cái cách xác thực kia mình không bàn, ở đây mình sẽ nói phương thức xác thực hai lớp bằng Google Authenticator thôi ha.
 
@@ -34,7 +34,7 @@ Mấy cái cách xác thực kia mình không bàn, ở đây mình sẽ nói ph
 
 Đấy là góc nhìn của enduser, nghe đơn giản lắm đúng không? Nhưng còn cái business khi integrate ở phía backend thì như thế nào??
 
-### How the backend handles the Authentication?
+### II. How the backend handles the Authentication?
 
 Greate, tới phần mà mình thích nhất rồi đây :) Cách mà backend handle việc authentication này cũng khá là đơn giản, và nó chính xác là những gì mà mình đang làm ở phía server của mình.
 `Google Authenticator` là ứng dụng hiện thực hóa thuật toán **Time-Based One-Time Password (TOTP)**. Cục này gồm những thứ tạm gọi như sau:
@@ -43,7 +43,7 @@ Greate, tới phần mà mình thích nhất rồi đây :) Cách mà backend ha
 - Một cái param truyền vào là thời gian hiện tại.
 - Một cái function để mã hóa.
 
-#### Token (Secret code)
+#### 0. Token (Secret code)
 
 Token thường sẽ có dạng là:
 
@@ -59,17 +59,17 @@ Cái này chính là token dùng để sinh ra cái QrCode cho user quét, user 
 
 Hai cái format này mình đang sử dụng luôn trong project và cái token ở trên là của default admin luôn =))
 
-#### Current Time input
+#### 1. Current Time input
 
 Cái giá trị thời gian này sẽ được dùng để mã hóa với cái token ở trên rồi sinh ra một cái passcode gồm 6 ký tự. Server và điện thoại sẽ dựa trên giá trị này để thực hiện việc encryption rồi so sánh cái passcode. Nếu passcode mình nhập và passcode trên điện thoại là giống nhau thì có nghĩ là mình được quyền đi tiếp :D
 
-#### Signing Function
+#### 2. Signing Function
 
 Signing function được sử dụng ở đây là **HMAC-SHA1**. HMAC có nghĩa là [Hash-based message authentication code][hmac-link] là một thuật toán sử dụng hàm mã hóa một chiều(ở đây là SHA1) để mã hóa giá trị.
 
 Cơ bản là backend sẽ cần những thứ như trên để decode, encode rồi bla bla bla... và thay vì phải handle một đống thứ ở trên thì mình tìm được một cái package khá ổn để handle việc này thay cho mình. Nó là [OTPLib][otplink], package được release lần cuối vào khoảng năm tháng trước tính từ khi bài blog này được viết (6/2020) và số lượng download ~60K cũng khá ổn. Thế nên mình quyết định dùng package này vào dự án luôn :D
 
-### Okay, let's integrate Google Authentication to our website ;)
+### III. Okay, let's integrate Google Authentication to our website ;)
 
 #### 0. Generate the QrCode.
 
@@ -95,6 +95,33 @@ Thế là xong phần generate token & qrcode.
 
 #### 1. Verify the passcode.
 
+Phần verify này thì đầu vào sẽ gồm 2 params: Passcode trên smartphone của user và token do server mình lưu trữ.
+
+```javascript
+const { authenticator } = require('otplib');
+
+// Passcode do user nhập
+const { code } = req.body;
+// Token lưu trữ ở server
+const token = currentUser.googleAuthSecretCode;
+
+const isValid = authenticator.check(code, token); // result sẽ là true / false.
+
+if (!isValid) {
+  // Throw error.
+}
+
+// do stuff
+```
+
+### IV. Summary.
+
+Trên đây là những bước cơ bản mà mình đã tích hợp vào phía backend của client :D Mình có build một trang demo ở [đây][here-link] các bạn có thể vào để check thử xem nó hoạt động như nào nhé ;)
+
+Nếu có thắc mắc hay vấn đề gì, đừng ngại, inbox mình ngay tại [Facebook][fb-link] nhé, hoặc không có thắc mắc thì cũng inbox nói chuyện phiếm chơi :D
+
+Chào mọi người, hẹn gặp lại ở bài viết tiếp theo :D
+
 [authy-link]: https://authy.com/what-is-2fa/
 [tentor-link]: https://tenor.com/view/jack-jack-edna-mode-incredibles2-lollipop-cute-gif-14544010
 [ios-link]: https://apps.apple.com/vn/app/google-authenticator/id388497605?l=vi
@@ -103,3 +130,4 @@ Thế là xong phần generate token & qrcode.
 [reactjs-link]: https://reactjs.org/
 [hmac-link]: https://en.wikipedia.org/wiki/HMAC
 [otplink]: https://www.npmjs.com/package/otplib
+[here-link]: https://nguyenvu.dev

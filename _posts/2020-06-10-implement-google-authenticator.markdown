@@ -8,6 +8,7 @@ categories: Nodejs JavaScript
 Chào mọi người, tuần trước Client có gửi cho mình một cái requirement yêu cầu tích hợp Google Authenticator để xác minh hai bước (Two-Factor Authentication) vào trang quản trị `Admin` của họ. Client của mình là một công ty hoạt động trong lĩnh vực finance nên yêu cầu bảo mật cũng phải tốt một chút. Sau một tuần ăn nằm với nó thì mình cùng với team cũng implement xong vụ này nên tiện share lên cho mọi người cùng đọc vì trong quá trình research mình cũng thấy resource nói về việc 2FA integration cũng mù mờ và khá là hạn chế. Chính vì thế mà hôm nay mình sẽ hướng dẫn các bạn cùng integrate cái chức năng này vào trang web héng.
 
 À lưu ý là backend sẽ dùng [Nodejs][nodejs-link] còn frontend sẽ là [Reactjs][reactjs-link] nhé. Thực ra khi đã hiểu được flow của nó thì platform hay ngôn ngữ nào cũng không phải là vấn đề nữa :D
+Các bạn có thể xem cái [Live Demo][demo-link] siu toa hổng nồ để xem cách nó hoạt động nhé :D
 
 ### 0. Two-Factor Authentication: What is it?
 
@@ -116,7 +117,7 @@ if (!isValid) {
 
 ### IV. Summary.
 
-Trên đây là những bước cơ bản mà mình đã tích hợp vào phía backend của client :D Mình có build một trang demo ở [đây][here-link] các bạn có thể vào để check thử xem nó hoạt động như nào nhé ;)
+Trên đây là những bước cơ bản mà mình đã tích hợp vào phía backend của client :D
 
 Nếu có thắc mắc hay vấn đề gì, đừng ngại, inbox mình ngay tại [Facebook][fb-link] nhé, hoặc không có thắc mắc thì cũng inbox nói chuyện phiếm chơi :D
 
@@ -130,5 +131,5 @@ Chào mọi người, hẹn gặp lại ở bài viết tiếp theo :D
 [reactjs-link]: https://reactjs.org/
 [hmac-link]: https://en.wikipedia.org/wiki/HMAC
 [otplink]: https://www.npmjs.com/package/otplib
-[here-link]: https://twofactor.nguyenvu.dev
 [fb-link]: https://www.facebook.com/ngvu.it/
+[demo-link]: https://twofactor.nguyenvu.dev

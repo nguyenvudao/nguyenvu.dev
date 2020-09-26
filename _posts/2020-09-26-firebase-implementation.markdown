@@ -5,14 +5,14 @@ date: 2020-09-26
 categories: Nodejs Firebase Typescript
 ---
 
-Hế lô mọi người, lâu quá không gặp :sweat_smile:. Nếu không nhầm thì cũng đã khoảng 3 tháng 16 ngày tính từ lần cuối mình publish bài viết về [Google Authenticator] ý. Vấn đề là sau hôm viết bài đấy thì mình join vào một project khác mà theo lời PM (Project Manager) thì project đang trong giai đoạn gấp rút cực kỳ và có thể bị cháy nếu như tình hình hiện tại không được cải thiện :D. Thế là mình lặn ngụp trong đấy mấy tháng trời, vừa làm vừa phải research thêm rất nhiều công nghệ khác (Firebase, Stripe, Nestjs, Odoo, Docker....) nên thời gian rảnh không có nhiều, bù lại thì mình sẽ viết thêm blog để giới thiệu với mọi người từng công nghệ mà mình đã tích hợp. Hiện tại thì project mình nhắc tới ở trên hôm nay đã là sprint cuối cùng lúc mình viết bài blog này (25-09-2020) và tuần sau sẽ bắt đầu bước vào "one month guarantee phase" nên thời gian hiện tại cũng xem như hơi hơi rảnh =)))
+Hế lô mọi người, lâu quá không gặp ^^!. Nếu không nhầm thì cũng đã khoảng 3 tháng 16 ngày tính từ lần cuối mình publish bài viết về [Google Authenticator] ý. Vấn đề là sau hôm viết bài đấy thì mình join vào một project khác mà theo lời PM (Project Manager) thì project đang trong giai đoạn gấp rút cực kỳ và có thể bị cháy nếu như tình hình hiện tại không được cải thiện :D. Thế là mình lặn ngụp trong đấy mấy tháng trời, vừa làm vừa phải research thêm rất nhiều công nghệ khác (Firebase, Stripe, Nestjs, Odoo, Docker....) nên thời gian rảnh không có nhiều, bù lại thì mình sẽ viết thêm blog để giới thiệu với mọi người từng công nghệ mà mình đã tích hợp. Hiện tại thì project mình nhắc tới ở trên hôm nay đã là sprint cuối cùng lúc mình viết bài blog này (25-09-2020) và tuần sau sẽ bắt đầu bước vào "one month guarantee phase" nên thời gian hiện tại cũng xem như hơi hơi rảnh =)))
 
-Có một tin không biết là vui hay buồn vì mình mới lại tham gia vào project khác, nhưng mà khó nhằn hơn vì đây là one man army project :))) Đại loại là một mình một project, mình được làm mọi thứ từ initial project, quyết định codebase, package, library, technical,... nào sẽ được sử dụng trong project này :stuck_out_tongue_closed_eyes: và cũng vì thế mà mình phải tốn nhiều thời gian hơn cho việc research, tránh việc thiếu kiến thức mà làm ảnh hưởng tới tiến độ của project. À, bà chị BA (Business Analyst) deal với khách hàng là việc initial project sẽ tốn ba ngày nhưng thực tế thì mình mất hết năm ngày cho việc này :sweat_smile: - một dấu hiệu cho thấy các bài blog sau có thể bị delay tới tận năm 2021 =))))
+Có một tin không biết là vui hay buồn vì mình mới lại tham gia vào project khác, nhưng mà khó nhằn hơn vì đây là one man army project :))) Đại loại là một mình một project, mình được làm mọi thứ từ initial project, quyết định codebase, package, library, technical,... nào sẽ được sử dụng trong project này và cũng vì thế mà mình phải tốn nhiều thời gian hơn cho việc research, tránh việc thiếu kiến thức mà làm ảnh hưởng tới tiến độ của project. À, bà chị BA (Business Analyst) deal với khách hàng là việc initial project sẽ tốn ba ngày nhưng thực tế thì mình mất hết năm ngày cho việc này - một dấu hiệu cho thấy các bài blog sau có thể bị delay tới tận năm 2021 =))))
 
 Thôi lan man vậy thoai, trong bài này mình sẽ nói về [Firebase] - một platform khá ngon lành được backed bởi ông khổng lồ Google.
 
    <center><img src="/assets/img/one-man-army.jpg"></center>
-   Đây là mình trong dự án hiện tại :joy:
+   Đây là mình trong dự án hiện tại :D
    
 ### I. Firebase là gì?
 
@@ -27,7 +27,7 @@ Lấy ví dụ cho đơn giản heee, mình đang lướt Facebook vào một ng
 Đấy là ví dụ mình assume là thằng Facebook dùng Firebase để quản lý messages và notification ha, chứ thực tế thì không phải vậy rồi =))
 
 Quay lại nào, dưới góc nhìn của một backend developer thì có rất nhiều cách để làm việc này, từ cách tự build một service hoặc sử dụng Firebase để việc quản lý trở nên nhẹ nhàng và nhanh gọn hơn.
-Ok, ở đây thì Facebook đã dùng một đoạn _token_ được gọi là _FcmToken_, các bạn có thể đọc thêm về [Firebase Cloud Messaging] để hiểu hơn về cách hoạt động của nó. Với mỗi thiết bị sẽ tương ứng với một _FcmToken_, cái _FcmToken_ này là bất biến và duy nhất sẽ được dùng để định danh thiết bị của user.
+Ok, ở đây thì Facebook đã dùng một đoạn _token_ được gọi là _FcmToken_, các bạn có thể đọc thêm về [Firebase Cloud Messaging] để hiểu hơn về cách hoạt động của nó. Với mỗi thiết bị sẽ tương ứng với một _FcmToken_, cái _FcmToken_ này là duy nhất sẽ được dùng để định danh thiết bị của user.
 
 Mỗi khi userA nhắn tin tới userB, [Firebase Cloud Messaging] sẽ dựa vào cái _FcmToken_ mà bắn notification cũng như message về cho userB và ngược lại nếu như userB thực hiện việc chatting với userA.
 
@@ -41,7 +41,7 @@ Cloud Function là một hàm xử lý sẽ trigger các event của Realtime Da
 
 > Node.js versions 8, 10, and 12 (Beta) are supported. See Set runtime options for important information regarding ongoing support for these versions of Node.js.
 
-Chúng ta cần cài đặt [Nodejs] để viết code cũng như [Firebase CLI]. Đối với nodejs thì mình khuyến khích nên sử dụng version 10 hoặc 12, nhưng tốt nhất cứ latest mà phang, có nhiều features mới để khám phá như [Promise.allSettled] thì tội gì phải dùng mấy bản cũ cũ đúng không? Cơ mà firebase function thì phải dùng đúng bản nha :v
+Chúng ta cần cài đặt [Nodejs] để viết code cũng như [Firebase CLI]. Đối với nodejs thì mình khuyến khích nên sử dụng version 10 hoặc 12, nhưng tốt nhất cứ latest mà phang, có nhiều features mới để khám phá như [Promise.allSettled] thì tội gì phải dùng mấy bản cũ cũ đúng không? Cơ mà firebase function thì phải dùng đúng bản v10 nha :v
 
 Sau khi cài đặt xong nodejs, mình cần phải cài thêm Firebase CLI nữa, các bạn có thể cài đặt qua NPM (Node Package Manager) bằng cách:
 
@@ -81,7 +81,7 @@ myproject
 
 #### 3. Viết function để tự động gửi notification mỗi khi có record mới được thêm vào nào.
 
-Đây, mình lôi luôn code mà mình đã viết trong dự án luôn :v Đương nhiên vì tính thương mại nên mình sẽ sửa lại gần như toàn bộ nội dung :sweat_smile: nhưng cách thức hoạt động thì vẫn gần như giống như nhau nhé.
+Đây, mình lôi luôn code mà mình đã viết trong dự án luôn :v Đương nhiên vì tính thương mại nên mình sẽ sửa lại gần như toàn bộ nội dung :D nhưng cách thức hoạt động thì vẫn gần như giống như nhau nhé.
 
 ```javascript
 /** ++ Imported modules ++ */
@@ -98,7 +98,7 @@ export const TriggerOnCreateNotifications = functions.database
     /** -- Get the added record in Realtime Database -- */
     const { message = '', fcmTokens = [], modelId = '' } = notification;
 
-    if (!fcmTokens || !fcmTokens.length) {
+    if (!fcmTokens.length) {
       throw new Error('User does not have any tokens!');
     }
 
@@ -112,7 +112,7 @@ export const TriggerOnCreateNotifications = functions.database
       },
       notification: {
         body: message,
-        title,
+        title: new Date().toLocaleString(),
       },
     };
     /** -- Prepare the message body to send to the user's device -- */

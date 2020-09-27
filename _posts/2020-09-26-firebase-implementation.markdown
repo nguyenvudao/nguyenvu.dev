@@ -7,7 +7,7 @@ categories: Nodejs Firebase Typescript
 
 Hế lô mọi người, lâu quá không gặp ^^!. Nếu không nhầm thì cũng đã khoảng 3 tháng 16 ngày tính từ lần cuối mình publish bài viết về [Google Authenticator] ý. Vấn đề là sau hôm viết bài đấy thì mình join vào một project khác mà theo lời PM (Project Manager) thì project đang trong giai đoạn gấp rút cực kỳ và có thể bị cháy nếu như tình hình hiện tại không được cải thiện :D. Thế là mình lặn ngụp trong đấy mấy tháng trời, vừa làm vừa phải research thêm rất nhiều công nghệ khác (Firebase, Stripe, Nestjs, Odoo, Docker....) nên thời gian rảnh không có nhiều, bù lại thì mình sẽ viết thêm blog để giới thiệu với mọi người từng công nghệ mà mình đã tích hợp. Hiện tại thì project mình nhắc tới ở trên hôm nay đã là sprint cuối cùng lúc mình viết bài blog này (25-09-2020) và tuần sau sẽ bắt đầu bước vào "one month guarantee phase" nên thời gian hiện tại cũng xem như hơi hơi rảnh =)))
 
-Có một tin không biết là vui hay buồn vì mình mới lại tham gia vào project khác, nhưng mà khó nhằn hơn vì đây là one man army project :))) Đại loại là một mình một project, mình được làm mọi thứ từ initial project, quyết định codebase, package, library, technical,... nào sẽ được sử dụng trong project này và cũng vì thế mà mình phải tốn nhiều thời gian hơn cho việc research, tránh việc thiếu kiến thức mà làm ảnh hưởng tới tiến độ của project. À, bà chị BA (Business Analyst) deal với khách hàng là việc initial project sẽ tốn ba ngày nhưng thực tế thì mình mất hết năm ngày cho việc này - một dấu hiệu cho thấy các bài blog sau có thể bị delay tới tận năm 2021 =))))
+Có một tin không biết là vui hay buồn vì mình mới lại tham gia vào project khác, nhưng mà khó nhằn hơn vì đây là one man army project :))) Đại loại là một mình một project, mình được làm mọi thứ từ initiate project, quyết định codebase, package, library, technical,... nào sẽ được sử dụng trong project này và cũng vì thế mà mình phải tốn nhiều thời gian hơn cho việc research, tránh việc thiếu kiến thức mà làm ảnh hưởng tới tiến độ của project. À, bà chị BA (Business Analyst) deal với khách hàng là việc initiate project sẽ tốn ba ngày nhưng thực tế thì mình mất hết năm ngày cho việc này - một dấu hiệu cho thấy các bài blog sau có thể bị delay tới tận năm 2021 =))))
 
 Thôi lan man vậy thoai, trong bài này mình sẽ nói về [Firebase] - một platform khá ngon lành được backed bởi ông khổng lồ Google.
 
@@ -58,7 +58,7 @@ Tiếp theo gõ:
 > firebase init functions
 
 Trong quá trình init, nó sẽ hỏi mình vài câu hỏi, cứ chọn những option nào phù hợp với bản thân nhé.
-Sau khi quá trình initial hoàn tất, cấu trúc của project sẽ nhìn giống như này này:
+Sau khi quá trình initiate hoàn tất, cấu trúc của project sẽ nhìn giống như này này:
 
 ```
 myproject
@@ -143,7 +143,7 @@ const payload = {
 
 ### IV. Kết thúc.
 
-Phần Firebase function mình xin kết thúc tại đây, đang ngồi ngoài The Coffee House dưới Biên Hoà, đói bụng quá nên kiếm gì ăn rồi hôm sau sẽ giới thiệu về phần messasing nhé :))))
+Phần Firebase function mình xin kết thúc tại đây, đang ngồi ngoài The Coffee House dưới Biên Hoà, đói bụng quá nên kiếm gì ăn rồi hôm sau sẽ giới thiệu về phần messaging nhé :))))
 
 Anw, nếu có thắc mắc gì thì cứ inbox [Facebook] mình hoặc comment ở dưới nha, đừng quên là sắp tới sẽ có rấc rấc nhiều technicals mới sẽ được giới thiệu trong này, mọi người nhớ canh me vào xem nha =))))
 

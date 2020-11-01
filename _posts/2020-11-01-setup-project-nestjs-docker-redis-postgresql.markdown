@@ -17,7 +17,7 @@ Okay, quay lại chủ đề chính của bài blog này. Cái dự án hiện t
 
 Mình xin trích dẫn một đoạn trong documents của docker:
 
-```javascript
+```
 Developing apps today requires so much more than writing code.
 Multiple languages, frameworks, architectures, and discontinuous
 interfaces between tools for each lifecycle stage creates enormous

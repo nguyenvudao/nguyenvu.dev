@@ -18,7 +18,12 @@ Okay, quay lại chủ đề chính của bài blog này. Cái dự án hiện t
 Mình xin trích dẫn một đoạn trong documents của docker:
 
 ```
-Developing apps today requires so much more than writing code. Multiple languages, frameworks, architectures, and discontinuous interfaces between tools for each lifecycle stage creates enormous complexity. Docker simplifies and accelerates your workflow, while giving developers the freedom to innovate with their choice of tools, application stacks, and deployment environments for each project.
+Developing apps today requires so much more than writing code.
+Multiple languages, frameworks, architectures, and discontinuous
+interfaces between tools for each lifecycle stage creates enormous
+complexity. Docker simplifies and accelerates your workflow, while
+giving developers the freedom to innovate with their choice of tools,
+application stacks, and deployment environments for each project.
 
 ```
 
@@ -149,3 +154,4 @@ Love you all :\*
 [dockerfile reference]: https://docs.docker.com/engine/reference/builder/
 [depends_on]: https://docs.docker.com/compose/compose-file/#depends_on
 [docker-compose docs]: https://docs.docker.com/compose/compose-file/
+[facebook]: https://www.facebook.com/ngvu.it

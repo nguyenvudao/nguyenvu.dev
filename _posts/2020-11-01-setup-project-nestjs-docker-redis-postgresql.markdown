@@ -17,14 +17,13 @@ Okay, quay lại chủ đề chính của bài blog này. Cái dự án hiện t
 
 Mình xin trích dẫn một đoạn trong documents của docker:
 
-```
+```javascript
 Developing apps today requires so much more than writing code.
 Multiple languages, frameworks, architectures, and discontinuous
 interfaces between tools for each lifecycle stage creates enormous
 complexity. Docker simplifies and accelerates your workflow, while
 giving developers the freedom to innovate with their choice of tools,
 application stacks, and deployment environments for each project.
-
 ```
 
 Việc developing bây giờ khác ngày xưa nhiều lắm, từ việc website ban đầu chỉ là một cục, đem lên server chạy (người ta hay gọi là [Monolithic Architecture] ý), khi đấy khi giao tiếp với một trang web thì chúng ta sẽ gửi một request tới server, sau đó server trả về toàn bộ nội dung trang web cho mình. Việc này khiến cho thời gian chờ để load cả một trang web lên rất lâu, rồi server cũng phải đảm nhiệm cả việc render html lên nữa,... Sau này khi mà người ta thấy quá nhiều nhược điểm cũng như là khả năng scale up của monolithic cũng gây khó cho developers. Từ đó, [Microservice Architecture] được ra đời để giải quyết các vấn đề trên, mỗi service sẽ làm đúng và duy nhất nhiệm vụ của mình, đảm bảo khả năng scale up dễ dàng hơn.

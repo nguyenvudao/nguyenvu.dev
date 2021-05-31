@@ -68,3 +68,5 @@ During the 2 weeks that I stayed at home, I also sent my CV to a few more compan
 Besides all of that, in 2021 I've done a lot of other things too. I got out of my comfort zone and tried a lot of new things. For example I'm currently co-leading a freelance project . I am to deliver a website consisting of a landing page, a portal page for users and an admin page for managers. The project is quite big, but it is running smoothly so far.
 
 That’s a wrap of my first half of 2021. I look forward to reviewing ongoing projects at the end of this year. Goodbye everyone, see you in the next blog post.
+
+[one man army project]: https://nguyenvu.dev/nodejs/firebase/typescript/2020/09/26/firebase-implementation.html

@@ -19,7 +19,9 @@ I also signed up for a driving course. In fact, I was in the middle of the cours
 
 I started investing in crypto currencies . I bought BTC, SHIB, TRIC, Moonrat (a pretty good token developed by Vietnamese people),... My account has already hit rock bottom a few times. I only put in a couple of millions VND and keep them there for now. =))))
 
-I started playing games on my phone =))) Which I never thought would happen lol, but I was so tempted by my new colleagues that I couldn't resist haha. I started raising fish too. There are five of them. They were thin when I bought them, but after 3 months with me they are all fat now =))))
+I started playing games on my phone =))) Which I never thought would happen lol, but I was so tempted by my new colleagues that I couldn't resist haha.
+
+I started raising fish too. There are five of them. They were thin when I bought them, but after 3 months with me they are all fat now =))))
 
 I also moved to a new place, although on paper I am still in No Trang Long with my homies =))) Currently, I only live like 1km away from my old place, quite close right. It's so convenient for getting my stuff from one place to the other lol.
 

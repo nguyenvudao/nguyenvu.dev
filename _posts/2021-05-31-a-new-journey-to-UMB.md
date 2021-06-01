@@ -13,7 +13,9 @@ You guys must be wondering why I wrote this in English right? Currently I'm work
 
 ## A lot of changes happened in the first half of this year.
 
-The biggest one is that I said goodbye to dirox after two years. I got a new job at [UMB] as a Software Engineer. I also started learning a bit of German as I'm in the process of applying to work in Germany through a program supported by the German Embassy. But this will take at least another year. Because of Covid, a lot of things are delayed.
+The biggest one is that I said goodbye to dirox after two years. I got a new job at [UMB] as a Software Engineer.
+
+I also started learning a bit of German as I'm in the process of applying to work in Germany through a program supported by the German Embassy. But this will take at least another year. Because of Covid, a lot of things are delayed.
 
 I also signed up for a driving course. In fact, I was in the middle of the course when the 4th wave of covid hit lol. Therefore I had to pause the course for now. The situation is quite tense but I feel everyone around me is not taking it seriously enough. It’s a bit worrying.
 
